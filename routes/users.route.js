@@ -5,7 +5,16 @@ const userRouter = express.Router();
 
 
 
+userRouter.get("/", async (req, res) => {
 
+    try {
+//         const allUsers = await userModel.find();
+        res.send("home page");
+    } catch (err) {
+
+        res.send({ "msg": "can't fetch home page,something went wrong", "error": err.message })
+    }
+});
 
 userRouter.get("/allusers", async (req, res) => {
 
